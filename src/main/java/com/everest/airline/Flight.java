@@ -1,19 +1,22 @@
 package com.everest.airline;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Flight {
     private long number;
     private String source;
     private String destination;
-    private String arrivalTime;
+    private LocalTime arrivalTime;
+    private LocalTime departureTime;
     private LocalDate departureDate;
 
-    public Flight(long number, String source, String destination,LocalDate departureDate,String arrivalTime) {
+    public Flight(long number, String source, String destination,LocalDate departureDate,LocalTime departureTime,LocalTime arrivalTime) {
         this.number = number;
         this.source = source;
         this.destination = destination;
         this.departureDate=departureDate;
+        this.departureTime=departureTime;
         this.arrivalTime =arrivalTime;
     }
 
@@ -31,5 +34,7 @@ public class Flight {
 
     public LocalDate getDepartureDate() { return departureDate;}
 
-    public String getArrivalTime() { return arrivalTime;}
+    public LocalTime getDepartureTime() { return departureTime;}
+
+    public LocalTime getArrivalTime() { return arrivalTime;}
 }
